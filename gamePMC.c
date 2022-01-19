@@ -17,7 +17,7 @@ int main()
     printf("Anda dinyatakan memenangkan permainan jika isi ember A atau B sama dengan 4 liter.\n");
 
     /* ALGORITMA */
-    while (B != 4){
+    while (A != 4){
         // Instruksi Game
         printf(" \n");
         printf("Instruksi yang dapat dilakukan:\n");
@@ -32,11 +32,11 @@ int main()
 
         // Memproses Pilihan
         if (pilihan == 1){
-            A = 3;
+            A = 5;
             printf("Air di ember A = %d liter dan air di ember B = %d liter.\n", A, B);
         }
         else if (pilihan == 2){
-            B = 5;
+            B = 3;
             printf("Air di ember A = %d liter dan air di ember B = %d liter.\n", A, B);
         }
         else if (pilihan == 3){
@@ -50,7 +50,7 @@ int main()
         else if (pilihan == 5){
             B = B + A;
             A = 0;
-            while (B > 5){
+            while (B > 3){
                 B = B - 1;
                 A = A + 1;
             }
@@ -59,7 +59,7 @@ int main()
         else if (pilihan == 6){
             A = A + B;
             B = 0;
-            while (A > 3){
+            while (A > 5){
                 A = A - 1;
                 B = B + 1;
             }
@@ -68,8 +68,8 @@ int main()
     }
 
     // nilai akhir
-    A = A;
-    B = B - 4;
+    A = A - 4;
+    B = B;
     C = 4;
 
     printf(" \n");
