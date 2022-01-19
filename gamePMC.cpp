@@ -56,10 +56,6 @@ int main() {
                 B = B - 1;
                 A = A + 1;
             }
-            if (A > 3 and B > 5){
-                A = 3;
-                B = 5;
-            }
             std::cout << "Air di ember A = " << A << " liter dan air di ember B = " << B << " liter" << std::endl;
             std::cout << std::endl;
         }
@@ -69,10 +65,6 @@ int main() {
             while (A > 3){
                 A = A - 1;
                 B = B + 1;
-            }
-            if (A > 3 and B > 5){
-                A = 3;
-                B = 5;
             }
             std::cout << "Air di ember A = " << A << " liter dan air di ember B = " << B << " liter" << std::endl;
             std::cout << std::endl;
