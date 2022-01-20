@@ -1,13 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+// Fungsi untuk membantu validasi input
+void empty_stdin (void) /* simple helper-function to empty stdin */
+{
+    int c = getchar();
+
+    while (c != '\n' && c != EOF)
+        c = getchar();
+}
+
+int main(void)
 {
     /* KAMUS */
     int A = 0;
     int B = 0;
     int C = 0;
     int pilihan;
+    int pilih = 0;
 
     // Deskripsi Game
     printf("WATER JUG PROBLEM\n");
@@ -28,7 +38,23 @@ int main()
         printf("5. Menuangkan isi ember A ke ember B sampai B penuh\n");
         printf("6. Menuangkan isi ember B ke ember A sampai A penuh\n");
         printf("Pilih nomor instruksi : ");
-        scanf("%d", &pilihan);
+        pilih = scanf("%d", &pilihan);
+
+        // Validasi Input
+        if (pilih == EOF) {   /* user generates manual EOF */
+            return 1;
+        }
+        else if (pilih == 0) {    /* matching failure */
+            fputs ("Masukan salah!\n", stderr);
+            empty_stdin();
+        }
+        else if (pilihan < 1 || 6 < pilihan) {  /* validate range */
+            fputs ("Masukan salah!\n", stderr);
+            empty_stdin();
+        }
+        else {  /* good input */
+            empty_stdin();
+        }
 
         // Memproses Pilihan
         if (pilihan == 1){
@@ -63,6 +89,9 @@ int main()
                 A = A - 1;
                 B = B + 1;
             }
+            printf("Air di ember A = %d liter dan air di ember B = %d liter.\n", A, B);
+        }
+        else {
             printf("Air di ember A = %d liter dan air di ember B = %d liter.\n", A, B);
         }
     }
